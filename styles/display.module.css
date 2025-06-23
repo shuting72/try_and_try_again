@@ -1,0 +1,23 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+  background: #000;
+}
+
+.card {
+  border: 2px solid #fff;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.stage {
+  font-size: 44px;  /* 原本 28px -> 放大到 36px */
+  font-weight: bold;
+}
+
+.score, .team {
+  font-size: 36px;  /* 原本 24px -> 放大到 28px */
+}
