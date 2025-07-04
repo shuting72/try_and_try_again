@@ -22,6 +22,13 @@ const stages = [
   { name: '毫秒之差', icon: '⏱️' }
 ];
 
+const teamNames = {
+  1: '探險隊',
+  2: '冒險隊',
+  3: '勘查隊',
+  4: '考察隊'
+};
+
 export default function Control() {
   const [data, setData] = useState({});
 
@@ -46,7 +53,7 @@ export default function Control() {
       display: 'flex',
       flexDirection: 'column'
     }}>
-      <h2 style={{ padding: '10px' }}>控場介面</h2>
+      <h2 style={{ padding: '10px', textShadow: '2px 2px 4px #000' }}>控場介面</h2>
 
       <div style={{
         flex: '1 1 auto',
@@ -60,7 +67,7 @@ export default function Control() {
         }}>
           {stages.map(s => (
             <div key={s.name} style={{ background: '#222', padding: '10px', borderRadius: '6px' }}>
-              <strong>{s.icon} {s.name}</strong>
+              <strong style={{ textShadow: '2px 2px 4px #000' }}>{s.icon} {s.name}</strong>
               <div style={{ marginTop: '6px' }}>
                 <input
                   placeholder="成績"
@@ -73,11 +80,10 @@ export default function Control() {
                   onChange={e => handleChange(s.name, 'team', e.target.value)}
                   style={{ color: '#000' }}
                 >
-                  <option value="">選擇小隊</option>
-                  <option value="1">第一小隊</option>
-                  <option value="2">第二小隊</option>
-                  <option value="3">第三小隊</option>
-                  <option value="4">第四小隊</option>
+                  <option value="">選擇隊伍</option>
+                  {Object.entries(teamNames).map(([key, name]) => (
+                    <option key={key} value={key}>{name}</option>
+                  ))}
                 </select>
               </div>
             </div>

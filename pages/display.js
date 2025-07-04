@@ -58,7 +58,7 @@ export default function Display() {
           >
             <div className={styles.stage} style={{ fontSize: '32px' }}>{s.icon} {s.name}</div>
             <div className={styles.score} style={{ fontSize: '28px' }}>成績：{d.score || '--'}</div>
-            <div className={styles.team} style={{ fontSize: '28px' }}>第{d.team || '--'}小隊</div>
+            <div className={styles.team} style={{ fontSize: '28px' }}>{getTeamName(d.team)}</div>
           </div>
         );
       })}
@@ -69,9 +69,19 @@ export default function Display() {
 function getColor(team) {
   const colors = {
     1: 'red',
-    2: '#CCCC00',  // 深黃
+    2: '#CCCC00',
     3: 'green',
     4: 'blue'
   };
   return colors[team] || '#000';
+}
+
+function getTeamName(team) {
+  const names = {
+    1: '探險隊',
+    2: '冒險隊',
+    3: '勘查隊',
+    4: '考察隊'
+  };
+  return names[team] || '--';
 }

@@ -1,4 +1,4 @@
-.grid {
+.grid { 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
@@ -14,10 +14,13 @@
 }
 
 .stage {
-  font-size: 44px;  /* 原本 28px -> 放大到 36px */
+  font-size: 44px;
   font-weight: bold;
+  text-shadow: 2px 2px 4px #000;
 }
 
-.score, .team {
-  font-size: 36px;  /* 原本 24px -> 放大到 28px */
+.score,
+.team {
+  font-size: 36px;
+  text-shadow: 2px 2px 4px #000;
 }
